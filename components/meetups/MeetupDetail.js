@@ -1,8 +1,8 @@
-import styles from "../meetups/MeetUpDetail.module.css";
+import classes from "./MeetUpDetail.module.css";
 const MeetUpDetail=(props)=>{
    console.log(props);
    return (
-    <div className={styles.colAlignCenter}>
+    <div className={classes.colAlignCenter}>
     <img src={props.image} 
     alt={"image"}></img>
     <h1>{props.title}</h1>
