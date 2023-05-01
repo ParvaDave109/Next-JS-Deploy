@@ -1,4 +1,4 @@
-import styles from "./MeetUpDetail.module.css";
+import styles from "../meetups/MeetUpDetail.module.css";
 const MeetUpDetail=(props)=>{
    console.log(props);
    return (
