@@ -44,15 +44,15 @@ export async function getStaticProps(context){
     const client = await MongoClient.connect('mongodb+srv://parvadave109:HIHTX9teRMODop3O@cluster0.371ysxq.mongodb.net/Meetups?retryWrites=true&w=majority');
     const db = client.db();
     const meetupsCollection = db.collection('meetups');
-    const meetup = await meetupsCollection.find({'_id':new ObjectId(context.params.meetupId)}).toArray();
+    const meetup = await meetupsCollection.findOne({'_id':new ObjectId(context.params.meetupId)});
     client.close();
     return {
         props:{
-                 title: meetup[0].title,
-                 address: meetup[0].address,
-                image: meetup[0].image,
-                description: meetup[0].description,
-                id: meetup[0]._id.toString()          
+                 title: meetup.title,
+                 address: meetup.address,
+                image: meetup.image,
+                description: meetup.description,
+                id: meetup._id.toString()          
         },
         revalidate:1
     }
