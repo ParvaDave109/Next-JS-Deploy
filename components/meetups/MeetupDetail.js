@@ -1,5 +1,5 @@
-import classes from "./MeetUpDetails.module.css";
-const MeetUpDetail=(props)=>{
+import classes from "./MeetupDetails.module.css"
+function MeetUpDetail(props){
    console.log(props);
    return (
     <div className={classes.colAlignCenter}>
