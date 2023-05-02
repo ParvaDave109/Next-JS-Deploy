@@ -27,7 +27,7 @@ export async function getStaticPaths(){
     const meetups = await meetupsCollection.find().toArray();
     client.close();
     return {
-     fallback:"blocking",
+     fallback:false,
      paths:
         meetups.map(meetup=>(
             {
