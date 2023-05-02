@@ -17,7 +17,7 @@ function HomePage(props){
 
 export async function getStaticProps(){
 
-    const client = await MongoClient.connect('mongodb+srv://parvadave109:dzjqkGS2zA2h2TIo@cluster0.371ysxq.mongodb.net/Meetups?retryWrites=true&w=majority');
+    const client = await MongoClient.connect('mongodb+srv://parvadave109:wth9KweojePdjYK6@cluster0.371ysxq.mongodb.net/Meetups?retryWrites=true&w=majority');
     const db = client.db();
     const meetupsCollection = db.collection('meetups');
     const meetups = await meetupsCollection.find().toArray();
@@ -34,7 +34,7 @@ export async function getStaticProps(){
                 }
                 ))
         },
-        revalidate:1
+        revalidate:10
     }
 }
 
