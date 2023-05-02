@@ -54,7 +54,7 @@ export async function getStaticProps(context){
                 description: meetup.description,
                 id: meetup._id.toString()          
         },
-        revalidate:1
+        revalidate:10
     }
 }
 
