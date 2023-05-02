@@ -1,4 +1,4 @@
-//import classes from "./MeetUpDetail.module.css";
+import classes from "./MeetUpDetail.module.css";
 const MeetUpDetail=(props)=>{
    console.log(props);
    return (
