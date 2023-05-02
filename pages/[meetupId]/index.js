@@ -1,7 +1,7 @@
 import { MongoClient, ObjectId } from "mongodb";
 import Head from "next/head";
 import React from "react";
-import MeetUpDetail from "../../components/meetups/MeetupDetail";
+import MeetUpDetail from "../../components/meetups/MeetDetails";
 
 function MeetUpDetails(props){
     return (
@@ -27,7 +27,7 @@ export async function getStaticPaths(){
     const meetups = await meetupsCollection.find().toArray();
     client.close();
     return {
-     fallback:false,
+     fallback:'blocking',
      paths:
         meetups.map(meetup=>(
             {
